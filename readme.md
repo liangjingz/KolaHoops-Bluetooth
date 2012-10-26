@@ -1,4 +1,4 @@
-#KolaHoops Bluetooth App#
+#KolaHoops Bluetooth App for Android#
 ##For use with the Galaxy Hoop##
 ##[KickStarter Launch](http://kck.st/RgyQ1X)##
 ##[www.kolahoops.com] (http://www.kolahoops.com)##
