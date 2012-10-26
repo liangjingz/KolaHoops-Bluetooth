@@ -2,7 +2,7 @@
 ##For use with the Galaxy Hoop##
 ##[KickStarter Launch](http://kck.st/RgyQ1X)##
 ##[www.kolahoops.com] (http://www.kolahoops.com)##
-##[www.faccebook.com/kolahoops] (http://www.facebook.com/kolahoops)##
+##[www.facebook.com/kolahoops] (http://www.facebook.com/kolahoops)##
 
 BRIGHT Open Source LED Hoops with 3 axis compass, acceleromoter and Bluetooth.
 
