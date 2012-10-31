@@ -23,6 +23,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -49,6 +50,7 @@ import android.widget.Toast;
  * This is the main Activity that displays the current chat session.
  */
 @TargetApi(5)
+
 public class BluetoothChat extends Activity {
     // Debugging
     private static final String TAG = "BluetoothChat";
@@ -472,6 +474,16 @@ public class BluetoothChat extends Activity {
             // Ensure this device is discoverable by others
             ensureDiscoverable();
             return true;
+        case R.id.pattern:
+        	setContentView(R.layout.patterncreator);
+        	return true;
+
+        case R.id.scheme:
+        	setContentView(R.layout.schemecreator);
+       return true;
+        case R.id.home:
+        	setContentView(R.layout.main);
+        	return true;
         }
         return false;
     }
@@ -479,3 +491,5 @@ public class BluetoothChat extends Activity {
     
 
 }
+
+ 
