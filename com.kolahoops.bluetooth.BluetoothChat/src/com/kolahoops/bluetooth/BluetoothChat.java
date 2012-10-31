@@ -99,7 +99,7 @@ public class BluetoothChat extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(D) Log.e(TAG, "+++ ON CREATE +++");
-
+        
         // Set up the window layout
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.main);
@@ -479,7 +479,7 @@ public class BluetoothChat extends Activity {
         	return true;
 
         case R.id.scheme:
-        	setContentView(R.layout.schemecreator);
+        		setContentView(R.layout.schemecreator);
        return true;
         case R.id.home:
         	setContentView(R.layout.main);
