@@ -23,6 +23,15 @@ public class SchemeDraw extends Activity
 {
 	
 	 int selectedcolor = 0;
+	 int selectedslot = 0;
+	 int color1;
+	 int color2;
+	 int color3;
+	 int color4;
+	 int color5;
+	 int color6;
+	 int color7;
+	 int color8;
 	  private Button button1;
 	  private Button button2;
 	  private Button button3;
@@ -37,7 +46,7 @@ public class SchemeDraw extends Activity
         setContentView(R.layout.schemecreator);
     setSchemebitmap(Bitmap.createBitmap( 1, 8, Config.ARGB_8888));
 
-   
+
     
     button1 = (Button) findViewById(R.id.button1); 
     button2 = (Button) findViewById(R.id.button2); 
@@ -50,59 +59,72 @@ public class SchemeDraw extends Activity
     
     button1.setOnClickListener(new OnClickListener() {
        public void onClick(View v) {
+    	   selectedslot=1;
     	   colorpicker();
        	
         }
    });
     button2.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     	   colorpicker();
-        	
+        	selectedslot=2;
+        	colorpicker();
+     	           	
          }
     });
     button3.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     	   colorpicker();
+        	selectedslot=3;
+        	colorpicker();
         	
          }
     });    button4.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     	   colorpicker();
+        	selectedslot=4;
+        	colorpicker();
         	
          }
     });    button5.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     	   colorpicker();
+        	selectedslot=5;
+        	colorpicker();
         	
          }
     });    button6.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     	   colorpicker();
+        	selectedslot=6;
+        	colorpicker();
         	
          }
     });    button7.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     	   colorpicker();
+        	selectedslot=7;
+        	colorpicker();
         	
          }
     });    button8.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     	   colorpicker();
+        	selectedslot=8;
+        	colorpicker();
         	
          }
     });
-    button1.setBackgroundResource(R.color.schemecolor1);
-    button2.setBackgroundResource(R.color.schemecolor2);
-    button3.setBackgroundResource(R.color.schemecolor3);
-    button4.setBackgroundResource(R.color.schemecolor4);
-    button5.setBackgroundResource(R.color.schemecolor5);
-    button6.setBackgroundResource(R.color.schemecolor6);
-    button7.setBackgroundResource(R.color.schemecolor7);
-    button8.setBackgroundResource(R.color.schemecolor8);
-    
+     color1 = Color.WHITE;
+	 color2 = Color.RED;
+	 color3 = Color.GREEN;
+	 color4 = Color.BLUE;
+	 color5 = Color.BLACK;
+	 color6 = Color.CYAN;
+	 color7 = Color.MAGENTA;
+	 color8 = Color.YELLOW;
+    refreshbuttons();
     
 	}
 	
+	private int getColor(int schemecolor1) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	private void setSchemebitmap(Bitmap createBitmap) {
 		// TODO Auto-generated method stub
 		
@@ -126,10 +148,57 @@ public class SchemeDraw extends Activity
 	            
 	            	Toast.makeText(getBaseContext(), "Selected Color : " + color, Toast.LENGTH_LONG).show();
 	                selectedcolor = color;
+	                if(selectedslot==1){
+	                	color1=color;
+	                	}
+	                if(selectedslot==2){
+	                	color2=color;
+	                	}
+	                if(selectedslot==3){
+	                	color3=color;
+	                	}
+	                if(selectedslot==4){
+	                	color4=color;
+	                	}
+	                if(selectedslot==5){
+	                	color5=color;
+	                	}
+	                if(selectedslot==6){
+	                	color6=color;
+	                	}
+	                if(selectedslot==7){
+	                	color7=color;
+	                	}
+	                if(selectedslot==8){
+	                	color8=color;
+	                	}
+	                refreshbuttons();
 	            }
 	        });
 	        dialog.show();
 	    }
+	 public void refreshbuttons(){
+	     	button1.setBackgroundColor(color1);
+		    button2.setBackgroundColor(color2);
+		    button3.setBackgroundColor(color3);
+		    button4.setBackgroundColor(color4);
+		    button5.setBackgroundColor(color5);
+		    button6.setBackgroundColor(color6);
+		    button7.setBackgroundColor(color7);
+		    button8.setBackgroundColor(color8);
+	 }
+	 public void refreshbuttonsinit(){
+		    button1.setBackgroundResource(color1);
+		    button2.setBackgroundResource(color2);
+		    button3.setBackgroundResource(color3);
+		    button4.setBackgroundResource(color4);
+		    button5.setBackgroundResource(color5);
+		    button6.setBackgroundResource(color6);
+		    button7.setBackgroundResource(color7);
+		    button8.setBackgroundResource(color8);
+	 }
+
+
     
 	}
 	
