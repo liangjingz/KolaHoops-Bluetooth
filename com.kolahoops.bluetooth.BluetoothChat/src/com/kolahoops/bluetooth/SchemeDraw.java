@@ -17,19 +17,20 @@ import android.widget.Toast;
 
 public class SchemeDraw extends Activity
 {
+	  private Button button1;
 private Bitmap schemebitmap;
 
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schemecreator);
-    setSchemebitmap(Bitmap.createBitmap( 1, 8, Config.RGB_565));
-     Button button1 = (Button) findViewById(R.id.button1);
-//		button1.setBackgroundColor(schemebitmap.getPixel(1,1));
+    setSchemebitmap(Bitmap.createBitmap( 1, 8, Config.ARGB_8888));
+
+     button1 = (Button) findViewById(R.id.button1); 
      button1.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
-     //	   button1.setBackgroundColor(0);
-         //   BluetoothChat.sendMessage("A");
-     
+   //    int pixelsa = 	schemebitmap.getPixel(1,1);
+        	
+        //	button1.setBackgroundResource(getscheme(1));
          }
     });
 //      Button button2 = (Button) findViewById(R.id.button2);
@@ -90,4 +91,6 @@ private Bitmap schemebitmap;
 	}
 
 
-}
+	}
+	
+
