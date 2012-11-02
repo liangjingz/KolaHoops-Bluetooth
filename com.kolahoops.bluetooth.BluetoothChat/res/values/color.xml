@@ -1,0 +1,10 @@
+<resources>
+  <color name="schemecolor1">#FFFFFFFF</color>
+  <color name="schemecolor2">#FFFF0000</color>
+  <color name="schemecolor3">#FF00FF00</color>
+  <color name="schemecolor4">#FF0000FF</color>
+  <color name="schemecolor5">#FFFFFF00</color>
+  <color name="schemecolor6">#FFFF00FF</color>
+  <color name="schemecolor7">#FF00FFFF</color>
+  <color name="schemecolor8">#FFF0FFFF</color>
+</resources>

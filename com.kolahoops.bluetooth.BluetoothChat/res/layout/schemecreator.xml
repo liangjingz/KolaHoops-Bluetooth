@@ -11,9 +11,9 @@
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
 
             <View
                 android:id="@+id/view1"
@@ -23,9 +23,9 @@
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
 
             <View
                 android:id="@+id/view2"
@@ -35,9 +35,9 @@
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+               android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
 
             <View
                 android:id="@+id/view3"
@@ -47,10 +47,9 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
             <View
                 android:id="@+id/view4"
                 android:layout_width="wrap_content"
@@ -59,9 +58,9 @@
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
 
             <View
                 android:id="@+id/view5"
@@ -71,9 +70,9 @@
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+               android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
 
             <View
                 android:id="@+id/view6"
@@ -83,9 +82,9 @@
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
 
             <View
                 android:id="@+id/view7"
@@ -95,9 +94,9 @@
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="" />
         </LinearLayout>
 
     </LinearLayout>
