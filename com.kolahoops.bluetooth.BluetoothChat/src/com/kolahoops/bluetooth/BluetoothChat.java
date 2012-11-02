@@ -104,7 +104,7 @@ public class BluetoothChat extends Activity {
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.main);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title);
-
+      
         // Set up the custom title
         mTitle = (TextView) findViewById(R.id.title_left_text);
         mTitle.setText(R.string.app_name);
@@ -479,7 +479,9 @@ public class BluetoothChat extends Activity {
         	return true;
 
         case R.id.scheme:
-        		setContentView(R.layout.schemecreator);
+        	 //setContentView(R.layout.schemecreator);
+        	 Intent goschemeracergo = new Intent (this, SchemeDraw.class);
+           	startActivity(goschemeracergo);
        return true;
         case R.id.home:
         	setContentView(R.layout.main);
