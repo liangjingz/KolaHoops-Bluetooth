@@ -366,13 +366,14 @@ public class BluetoothChat extends Activity {
             Toast.makeText(this, R.string.not_connected, Toast.LENGTH_SHORT).show();
             return;
         }
-
+        message=message + '\n';//add a newline to the message before we convert it to ascii
         // Check that there's actually something to send
         if (message.length() > 0) {
             // Get the message bytes and tell the BluetoothChatService to write
             byte[] send = message.getBytes();
             mChatService.write(send);
-
+       
+            
             // Reset out string buffer to zero and clear the edit text field
             mOutStringBuffer.setLength(0);
         }

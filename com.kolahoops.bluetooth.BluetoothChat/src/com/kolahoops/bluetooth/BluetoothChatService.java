@@ -192,6 +192,7 @@ import android.util.Log;
         // Perform the write unsynchronized
         r.write(out);
     }
+    
 
     /**
      * Indicate that the connection attempt failed and notify the UI Activity.
