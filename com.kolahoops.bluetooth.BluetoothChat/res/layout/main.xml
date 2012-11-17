@@ -30,7 +30,7 @@
         android:transcriptMode="alwaysScroll" >
 
     </ListView>
-
+
     <SeekBar
         android:id="@+id/seekBar1"
         android:layout_width="fill_parent"
@@ -38,7 +38,7 @@
         android:layout_alignBottom="@layout/main"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:max="4"
+        android:max="5"
         android:minHeight="24dip"
         android:minWidth="200dip"
         android:paddingBottom="10dp"
