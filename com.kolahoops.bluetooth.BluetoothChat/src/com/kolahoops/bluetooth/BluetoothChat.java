@@ -27,6 +27,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -85,6 +86,14 @@ public class BluetoothChat extends Activity {
     private Spinner spinner1;
     private Spinner spinner2;
 
+	public int color1;
+	public int color2;
+	public int color3;
+	public int color4;
+	public int color5;
+	public int color6;
+	public int color7;
+	public int color8;
     // Name of the connected device
     private String mConnectedDeviceName = null;
     // Array adapter for the conversation thread
@@ -107,6 +116,28 @@ public class BluetoothChat extends Activity {
         setContentView(R.layout.main);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title);
       
+
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null){
+        color1=extras.getInt("color1");
+        color2=extras.getInt("color2");
+        color3=extras.getInt("color3");
+        color4=extras.getInt("color4");
+        color5=extras.getInt("color5");
+        color6=extras.getInt("color6");
+        color7=extras.getInt("color7");
+        color8=extras.getInt("color8");
+        }else{
+        	     color1 = Color.WHITE;
+        		 color2 = Color.RED;
+        		 color3 = Color.GREEN;
+        		 color4 = Color.BLUE;
+        		 color5 = Color.BLACK;
+        		 color6 = Color.CYAN;
+        		 color7 = Color.MAGENTA;
+        		 color8 = Color.YELLOW;
+        }
+        
         // Set up the custom title
         mTitle = (TextView) findViewById(R.id.title_left_text);
         mTitle.setText(R.string.app_name);
@@ -220,7 +251,7 @@ public class BluetoothChat extends Activity {
         Button00 = (Button) findViewById(R.id.Button00);
         Button00.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-               sendMessage("A");
+            	sendMessage("B "+color1+" "+color2+" "+color3+" "+color4+" "+color5+" "+color6+" "+color7+color8);
             }
         });
         Button01 = (Button) findViewById(R.id.Button01);
@@ -444,6 +475,10 @@ public class BluetoothChat extends Activity {
                 mChatService.connect(device);
             }
             break;
+        case 80:
+            
+        	
+            break;
         case REQUEST_ENABLE_BT:
             // When the request to enable Bluetooth returns
             if (resultCode == Activity.RESULT_OK) {
@@ -484,7 +519,15 @@ public class BluetoothChat extends Activity {
         case R.id.scheme:
         	 //setContentView(R.layout.schemecreator);
         	 Intent goschemeracergo = new Intent (this, SchemeDraw.class);
-           	startActivity(goschemeracergo);
+        	 goschemeracergo.putExtra("color1",color1);
+        	 goschemeracergo.putExtra("color2",color2);
+        	 goschemeracergo.putExtra("color3",color3);
+        	 goschemeracergo.putExtra("color4",color4);
+        	 goschemeracergo.putExtra("color5",color5);
+        	 goschemeracergo.putExtra("color6",color6);
+        	 goschemeracergo.putExtra("color7",color7);
+        	 goschemeracergo.putExtra("color8",color8);
+           	 startActivityForResult(goschemeracergo,80);
        return true;
         case R.id.home:
         	setContentView(R.layout.main);
