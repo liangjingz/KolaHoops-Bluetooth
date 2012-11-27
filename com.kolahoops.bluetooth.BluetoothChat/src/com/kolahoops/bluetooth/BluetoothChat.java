@@ -27,6 +27,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -65,6 +66,7 @@ public class BluetoothChat extends Activity {
     public static final int MESSAGE_WRITE = 3;
     public static final int MESSAGE_DEVICE_NAME = 4;
     public static final int MESSAGE_TOAST = 5;
+    public static final int UPDATE_COLORS = 6;
 
     // Key names received from the BluetoothChatService Handler
     public static final String DEVICE_NAME = "device_name";
@@ -118,18 +120,9 @@ public class BluetoothChat extends Activity {
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title);
       
 
-        Bundle extras = getIntent().getExtras();
-        if(extras!=null){
-        color1=extras.getInt("color1");
-        color2=extras.getInt("color2");
-        color3=extras.getInt("color3");
-        color4=extras.getInt("color4");
-        color5=extras.getInt("color5");
-        color6=extras.getInt("color6");
-        color7=extras.getInt("color7");
-        color8=extras.getInt("color8");
-        }else{
-        	     color1 = Color.WHITE;
+       getcolors();
+ /*       if(color1==0&&color2==0&&color3==0&&color4==0&&color5==0&&color6==0&&color7==0&&color8==0){
+          	     color1 = Color.WHITE;
         		 color2 = Color.RED;
         		 color3 = Color.GREEN;
         		 color4 = Color.BLUE;
@@ -138,7 +131,7 @@ public class BluetoothChat extends Activity {
         		 color7 = Color.MAGENTA;
         		 color8 = Color.YELLOW;
         }
-        
+   */     
         // Set up the custom title
         mTitle = (TextView) findViewById(R.id.title_left_text);
         mTitle.setText(R.string.app_name);
@@ -157,6 +150,31 @@ public class BluetoothChat extends Activity {
    
 	//get the selected dropdown list value
 	
+    public void getcolors(){
+		SharedPreferences settings = getSharedPreferences("colors", Activity.MODE_WORLD_READABLE);
+        color1 = settings.getInt("1", -1);
+        color2 = settings.getInt("2", -1);
+        color3 = settings.getInt("3", -1);
+        color4 = settings.getInt("4", -1);
+        color5 = settings.getInt("5", -1);
+        color6 = settings.getInt("6", -1);
+        color7 = settings.getInt("7", -1);
+        color8 = settings.getInt("8", -1);
+        }
+	public void setcolors(){
+		SharedPreferences settings = getSharedPreferences("colors", Activity.MODE_WORLD_READABLE);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("1",color1);
+        editor.putInt("2",color2);
+        editor.putInt("3",color3);
+        editor.putInt("4",color4);
+        editor.putInt("5",color5);
+        editor.putInt("6",color6);
+        editor.putInt("7",color7);
+        editor.putInt("8",color8);
+        editor.commit();	
+	}
+
 	
     @Override
     public void onStart() {
@@ -253,6 +271,7 @@ public class BluetoothChat extends Activity {
         Button00.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
           //   chksum = (byte) (color1+color2+color3+color4+color5+color6+color7+color8);
+            	getcolors();
             	sendMessage("J "+color1+" "+color2+" "+color3+" "+color4+" "+color5+" "+color6+" "+color7+" "+color8);
             //	sendMessage("C "+0);// display
             }
@@ -355,7 +374,6 @@ public class BluetoothChat extends Activity {
 
         // Initialize the BluetoothChatService to perform bluetooth connections
         mChatService = new BluetoothChatService(this, mHandler);
-
         // Initialize the buffer for outgoing messages
         mOutStringBuffer = new StringBuffer("");
     }
@@ -414,7 +432,6 @@ public class BluetoothChat extends Activity {
     }
 
 
-
     // The Handler that gets information back from the BluetoothChatService
     private final Handler mHandler = new Handler() {
         @Override
@@ -459,6 +476,7 @@ public class BluetoothChat extends Activity {
                 Toast.makeText(getApplicationContext(), msg.getData().getString(TOAST),
                                Toast.LENGTH_SHORT).show();
                 break;
+            
             }
         }
     };
@@ -477,10 +495,6 @@ public class BluetoothChat extends Activity {
                 // Attempt to connect to the device
                 mChatService.connect(device);
             }
-            break;
-        case 80:
-            
-        	
             break;
         case REQUEST_ENABLE_BT:
             // When the request to enable Bluetooth returns
@@ -521,16 +535,11 @@ public class BluetoothChat extends Activity {
 
         case R.id.scheme:
         	 //setContentView(R.layout.schemecreator);
-        	 Intent goschemeracergo = new Intent (this, SchemeDraw.class);
-        	 goschemeracergo.putExtra("color1",color1);
-        	 goschemeracergo.putExtra("color2",color2);
-        	 goschemeracergo.putExtra("color3",color3);
-        	 goschemeracergo.putExtra("color4",color4);
-        	 goschemeracergo.putExtra("color5",color5);
-        	 goschemeracergo.putExtra("color6",color6);
-        	 goschemeracergo.putExtra("color7",color7);
-        	 goschemeracergo.putExtra("color8",color8);
-           	 startActivityForResult(goschemeracergo,80);
+        	setcolors();
+        	 Intent goschemeracergo = new Intent (this, SchemeDraw.class);        	
+           	startActivity(goschemeracergo);
+           	
+
        return true;
         case R.id.home:
         	setContentView(R.layout.main);

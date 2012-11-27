@@ -7,6 +7,7 @@ import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -15,14 +16,16 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class SchemeDraw extends Activity
-{
+public class SchemeDraw extends Activity{
+
 	
 	 int selectedcolor = 0;
 	 int selectedslot = 0;
@@ -42,39 +45,55 @@ public class SchemeDraw extends Activity
 	  private Button button6;
 	  private Button button7;
 	  private Button button8;
-	  
+	 // private final Handler mHandler;
 
-	  @Override
+	  
+		public void getcolors(){
+			SharedPreferences settings = getSharedPreferences("colors",Activity.MODE_WORLD_READABLE);
+	        color1 = settings.getInt("1", -1);
+	        color2 = settings.getInt("2", -1);
+	        color3 = settings.getInt("3", -1);
+	        color4 = settings.getInt("4", -1);
+	        color5 = settings.getInt("5", -1);
+	        color6 = settings.getInt("6", -1);
+	        color7 = settings.getInt("7", -1);
+	        color8 = settings.getInt("8", -1);
+	        }
+		public void setcolors(){
+			SharedPreferences settings = getSharedPreferences("colors", Activity.MODE_WORLD_READABLE);
+	        SharedPreferences.Editor editor = settings.edit();
+	        editor.putInt("1",color1);
+	        editor.putInt("2",color2);
+	        editor.putInt("3",color3);
+	        editor.putInt("4",color4);
+	        editor.putInt("5",color5);
+	        editor.putInt("6",color6);
+	        editor.putInt("7",color7);
+	        editor.putInt("8",color8);
+	        editor.commit();	
+		}
+	  
+	 @Override
 	    public void onDestroy() {
 	        super.onDestroy();
-	     Intent BluetoothChats = new Intent(this,BluetoothChat.class);
-	     BluetoothChats.putExtra("color1",color1);
-     	 BluetoothChats.putExtra("color2",color2);
-     	 BluetoothChats.putExtra("color3",color3);
-     	 BluetoothChats.putExtra("color4",color4);
-     	 BluetoothChats.putExtra("color5",color5);
-     	 BluetoothChats.putExtra("color6",color6);
-     	 BluetoothChats.putExtra("color7",color7);
-     	 BluetoothChats.putExtra("color8",color8);
-     	 startActivity(BluetoothChats);
+	         // setcolors();
+     	 
 	    }
-	  
+	  public void onResume (Bundle savedInstanceState){
+		  super.onResume();
+		  getcolors();
+		  
+	  }
+	  public void onPause (Bundle savedInstanceState){
+		  super.onPause();
+		//  setcolors();
+		  
+	  }
+	  @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schemecreator);
-   // setSchemebitmap(Bitmap.createBitmap( 1, 8, Config.ARGB_8888));
-
-        Bundle extras = getIntent().getExtras();
-        if(extras!=null){
-        color1=extras.getInt("color1");
-        color2=extras.getInt("color2");
-        color3=extras.getInt("color3");
-        color4=extras.getInt("color4");
-        color5=extras.getInt("color5");
-        color6=extras.getInt("color6");
-        color7=extras.getInt("color7");
-        color8=extras.getInt("color8");
-        }
+        
         
     
     button1 = (Button) findViewById(R.id.button1); 
@@ -85,6 +104,8 @@ public class SchemeDraw extends Activity
     button6 = (Button) findViewById(R.id.button6); 
     button7 = (Button) findViewById(R.id.button7); 
     button8 = (Button) findViewById(R.id.button8); 
+    
+    refreshbuttons();
     
     button1.setOnClickListener(new OnClickListener() {
        public void onClick(View v) {
@@ -137,27 +158,10 @@ public class SchemeDraw extends Activity
         	
          }
     });
-     color1 = Color.WHITE;
-	 color2 = Color.RED;
-	 color3 = Color.GREEN;
-	 color4 = Color.BLUE;
-	 color5 = Color.BLACK;
-	 color6 = Color.CYAN;
-	 color7 = Color.MAGENTA;
-	 color8 = Color.YELLOW;
-    refreshbuttons();
-    
-	}
 	
-	private int getColor(int schemecolor1) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	private void setSchemebitmap(Bitmap createBitmap) {
-		// TODO Auto-generated method stub
-		
-	}
+    
+	  }
+	
 
 	 public void colorpicker() {
 		 
@@ -201,12 +205,14 @@ public class SchemeDraw extends Activity
 	                if(selectedslot==8){
 	                	color8=color;
 	                	}
+	                setcolors();
 	                refreshbuttons();
 	            }
 	        });
 	        dialog.show();
 	    }
 	 public void refreshbuttons(){
+		 getcolors();
 	     	button1.setBackgroundColor(color1);
 		    button2.setBackgroundColor(color2);
 		    button3.setBackgroundColor(color3);
@@ -216,17 +222,7 @@ public class SchemeDraw extends Activity
 		    button7.setBackgroundColor(color7);
 		    button8.setBackgroundColor(color8);
 	 }
-	 public void refreshbuttonsinit(){
-		    button1.setBackgroundResource(color1);
-		    button2.setBackgroundResource(color2);
-		    button3.setBackgroundResource(color3);
-		    button4.setBackgroundResource(color4);
-		    button5.setBackgroundResource(color5);
-		    button6.setBackgroundResource(color6);
-		    button7.setBackgroundResource(color7);
-		    button8.setBackgroundResource(color8);
-	 }
-
+	
 
     
 	}
