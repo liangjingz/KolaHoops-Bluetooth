@@ -25,12 +25,11 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@+id/linearLayout1"
-        android:layout_alignTop="@layout/main"
+        android:layout_alignTop="@+id/linearLayout1"
         android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll" >
-
     </ListView>
-
+
     <SeekBar
         android:id="@+id/seekBar1"
         android:layout_width="fill_parent"
@@ -53,28 +52,28 @@
         android:layout_above="@+id/seekBar1"
         android:layout_alignParentLeft="true"
         android:gravity="bottom" >
-        
+
         <Button
             android:id="@+id/Button00"
             android:layout_width="85dp"
             android:layout_height="fill_parent"
             android:text="@string/button00" />
-         <View
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/Button01"
             android:layout_width="85dp"
             android:layout_height="fill_parent"
             android:text="@string/button01" />
- <View
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/Button02"
@@ -82,26 +81,24 @@
             android:layout_height="fill_parent"
             android:text="@string/button02" />
 
- <View
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/Button03"
             android:layout_width="85dp"
             android:layout_height="fill_parent"
             android:text="@string/button03" />
-
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout2"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentLeft="false"
         android:orientation="vertical"
         android:paddingBottom="5dp" >
 
@@ -132,6 +129,117 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:entries="@array/scheme" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+             />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+           />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+             />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+             />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+             />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="85dp"
+            android:layout_height="fill_parent"
+            />
     </LinearLayout>
 
 </RelativeLayout>

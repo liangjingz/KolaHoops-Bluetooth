@@ -29,23 +29,25 @@ public class SchemeDraw extends Activity{
 	
 	 int selectedcolor = 0;
 	 int selectedslot = 0;
-	public int color1;
-	public int color2;
-	public int color3;
-	public int color4;
-	public int color5;
-	public int color6;
-	public int color7;
-	public int color8;
-	  private Button button1;
-	  private Button button2;
-	  private Button button3;
-	  private Button button4;
-	  private Button button5;
-	  private Button button6;
-	  private Button button7;
-	  private Button button8;
-	 // private final Handler mHandler;
+	 public int color1;
+	 public int color2;
+	 public int color3;
+	 public int color4;
+	 public int color5;
+	 public int color6;
+	 public int color7;
+	 public int color8;
+	 private Button button1;
+	 private Button button2;
+	 private Button button3;
+	 private Button button4;
+	 private Button button5;
+	 private Button button6;
+	 private Button button7;
+	 private Button button8;
+	//  private final Handler mHandler;
+	  public static final int UPDATE_COLORS = 6;
+	  private final Handler mHandler = new Handler();
 
 	  
 		public void getcolors(){
@@ -207,6 +209,17 @@ public class SchemeDraw extends Activity{
 	                	}
 	                setcolors();
 	                refreshbuttons();
+	                //send color to hoop
+	                updatehoop();
+	               // Intent intent=new Intent(getIntent() ,BluetoothChat.class);
+	               // sendMessage("J "+color1+" "+color2+" "+color3+" "+color4+" "+color5+" "+color6+" "+color7+" "+color8)
+	        //        mUserText = (EditText) textEntryView.findViewById(R.id.txt_password);
+	         //       String strpwd = mUserText.getText().toString();
+                   // intent.putExtra("my_password",strpwd);
+	           //     intent.putExtra("my_password",strpwd);
+	             //   startActivity(intent); 
+	            	getcolors();
+	            	
 	            }
 	        });
 	        dialog.show();
@@ -223,8 +236,10 @@ public class SchemeDraw extends Activity{
 		    button8.setBackgroundColor(color8);
 	 }
 	
+public void updatehoop(){
+	
+}
 
-    
-	}
+}
 	
 

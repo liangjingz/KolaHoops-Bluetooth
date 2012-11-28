@@ -88,6 +88,8 @@ public class BluetoothChat extends Activity {
     private Spinner spinner1;
     private Spinner spinner2;
 
+    int selectedcolor = 0;
+    int selectedslot = 0;
 	public int color1;
 	public int color2;
 	public int color3;
@@ -96,6 +98,14 @@ public class BluetoothChat extends Activity {
 	public int color6;
 	public int color7;
 	public int color8;
+	private Button button1;
+	private Button button2;
+	private Button button3;
+	private Button button4;
+	private Button button5;
+	private Button button6;
+	private Button button7;
+	private Button button8;
 	public byte chksum;
     // Name of the connected device
     private String mConnectedDeviceName = null;
@@ -119,8 +129,70 @@ public class BluetoothChat extends Activity {
         setContentView(R.layout.main);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title);
       
+        getcolors();
+      
+       button1 = (Button) findViewById(R.id.button1); 
+       button2 = (Button) findViewById(R.id.button2); 
+       button3 = (Button) findViewById(R.id.button3); 
+       button4 = (Button) findViewById(R.id.button4); 
+       button5 = (Button) findViewById(R.id.button5); 
+       button6 = (Button) findViewById(R.id.button6); 
+       button7 = (Button) findViewById(R.id.button7); 
+       button8 = (Button) findViewById(R.id.button8); 
+       
+       button1.setOnClickListener(new OnClickListener() {
+           public void onClick(View v) {
+        	   selectedslot=1;
+        	   colorpicker();
+           	
+            }
+       });
+        button2.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	selectedslot=2;
+            	colorpicker();
+         	           	
+             }
+        });
+        button3.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	selectedslot=3;
+            	colorpicker();
+            	
+             }
+        });    button4.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	selectedslot=4;
+            	colorpicker();
+            	
+             }
+        });    button5.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	selectedslot=5;
+            	colorpicker();
+            	
+             }
+        });    button6.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	selectedslot=6;
+            	colorpicker();
+            	
+             }
+        });    button7.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	selectedslot=7;
+            	colorpicker();
+            	
+             }
+        });    button8.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	selectedslot=8;
+            	colorpicker();
+            	
+             }
+        });
+        refreshbuttons();
 
-       getcolors();
  /*       if(color1==0&&color2==0&&color3==0&&color4==0&&color5==0&&color6==0&&color7==0&&color8==0){
           	     color1 = Color.WHITE;
         		 color2 = Color.RED;
@@ -176,6 +248,81 @@ public class BluetoothChat extends Activity {
 	}
 
 	
+	 public void colorpicker() {
+		 
+	        //     initialColor is the initially-selected color to be shown in the rectangle on the left of the arrow.
+	        //     for example, 0xff000000 is black, 0xff0000ff is blue. Please be aware of the initial 0xff which is the alpha.
+	 
+	        AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, R.color.schemecolor1, new OnAmbilWarnaListener() {
+	 
+	            // Executes, when user click Cancel button
+	    
+	            public void onCancel(AmbilWarnaDialog dialog){
+	            }
+	 
+	            // Executes, when user click OK button
+	        
+	            public void onOk(AmbilWarnaDialog dialog, int color) {
+	            
+	            	Toast.makeText(getBaseContext(), "Selected Color : " + color, Toast.LENGTH_LONG).show();
+	                selectedcolor = color;
+	                if(selectedslot==1){
+	                	color1=color;
+	                	}
+	                if(selectedslot==2){
+	                	color2=color;
+	                	}
+	                if(selectedslot==3){
+	                	color3=color;
+	                	}
+	                if(selectedslot==4){
+	                	color4=color;
+	                	}
+	                if(selectedslot==5){
+	                	color5=color;
+	                	}
+	                if(selectedslot==6){
+	                	color6=color;
+	                	}
+	                if(selectedslot==7){
+	                	color7=color;
+	                	}
+	                if(selectedslot==8){
+	                	color8=color;
+	                	}
+	                setcolors();
+	                refreshbuttons();
+	                //send color to hoop
+	                updatehoop();
+	               // Intent intent=new Intent(getIntent() ,BluetoothChat.class);
+	               // sendMessage("J "+color1+" "+color2+" "+color3+" "+color4+" "+color5+" "+color6+" "+color7+" "+color8)
+	        //        mUserText = (EditText) textEntryView.findViewById(R.id.txt_password);
+	         //       String strpwd = mUserText.getText().toString();
+                // intent.putExtra("my_password",strpwd);
+	           //     intent.putExtra("my_password",strpwd);
+	             //   startActivity(intent); 
+	            	getcolors();
+	            	
+	            }
+	        });
+	        dialog.show();
+	    }
+	 public void refreshbuttons(){
+	     	button1.setBackgroundColor(color1);
+		    button2.setBackgroundColor(color2);
+		    button3.setBackgroundColor(color3);
+		    button4.setBackgroundColor(color4);
+		    button5.setBackgroundColor(color5);
+		    button6.setBackgroundColor(color6);
+		    button7.setBackgroundColor(color7);
+		    button8.setBackgroundColor(color8);
+	 }
+	 
+	 public void updatehoop(){
+			
+	 }
+
+	
     @Override
     public void onStart() {
         super.onStart();
@@ -196,7 +343,7 @@ public class BluetoothChat extends Activity {
     public synchronized void onResume() {
         super.onResume();
         if(D) Log.e(TAG, "+ ON RESUME +");
-
+        
         // Performing this check in onResume() covers the case in which BT was
         // not enabled during onStart(), so we were paused to enable it...
         // onResume() will be called when ACTION_REQUEST_ENABLE activity returns.
@@ -254,6 +401,7 @@ public class BluetoothChat extends Activity {
     		seekBar1 = (SeekBar) findViewById(R.id.seekBar1);
     		seekBar1.setOnSeekBarChangeListener(new OnSeekBarChangeListener(){
     			
+    	//		
     			
     			 public void onStopTrackingTouch(SeekBar arg0) {
     		        }
@@ -266,6 +414,14 @@ public class BluetoothChat extends Activity {
     			   sendMessage("B "+progress);
     		    }
     		 });
+    		
+    		
+    		//this will pass data to bluetooth on color choose.
+    		
+    		
+ 
+    			             
+    			
         
         Button00 = (Button) findViewById(R.id.Button00);
         Button00.setOnClickListener(new OnClickListener() {
@@ -431,6 +587,8 @@ public class BluetoothChat extends Activity {
         }
     }
 
+    
+    
 
     // The Handler that gets information back from the BluetoothChatService
     private final Handler mHandler = new Handler() {
@@ -476,7 +634,10 @@ public class BluetoothChat extends Activity {
                 Toast.makeText(getApplicationContext(), msg.getData().getString(TOAST),
                                Toast.LENGTH_SHORT).show();
                 break;
-            
+            case UPDATE_COLORS:
+            	getcolors();
+            	BluetoothChat.this.sendMessage("J "+color1+" "+color2+" "+color3+" "+color4+" "+color5+" "+color6+" "+color7+" "+color8);
+            	break;
             }
         }
     };
