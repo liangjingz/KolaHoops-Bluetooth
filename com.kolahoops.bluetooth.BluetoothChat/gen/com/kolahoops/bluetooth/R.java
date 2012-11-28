@@ -62,17 +62,12 @@ public final class R {
         public static final int button7=0x7f090023;
         public static final int button8=0x7f090024;
         public static final int button_scan=0x7f09000e;
-        public static final int discoverable=0x7f09002d;
-        public static final int group1=0x7f09002e;
-        public static final int home=0x7f09002f;
         public static final int in=0x7f09000f;
         public static final int linearLayout1=0x7f090010;
         public static final int linearLayout2=0x7f090012;
         public static final int new_devices=0x7f09000d;
         public static final int paired_devices=0x7f09000b;
-        public static final int pattern=0x7f090030;
         public static final int scan=0x7f09002c;
-        public static final int scheme=0x7f090031;
         public static final int seekBar1=0x7f090011;
         public static final int spinner1=0x7f090018;
         public static final int spinner2=0x7f09001a;
