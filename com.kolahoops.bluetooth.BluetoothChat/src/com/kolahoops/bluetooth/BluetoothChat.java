@@ -319,7 +319,7 @@ public class BluetoothChat extends Activity {
 	 }
 	 
 	 public void updatehoop(){
-			
+		 sendMessage("J "+color1+" "+color2+" "+color3+" "+color4+" "+color5+" "+color6+" "+color7+" "+color8);
 	 }
 
 	
@@ -686,31 +686,13 @@ public class BluetoothChat extends Activity {
             Intent serverIntent = new Intent(this, DeviceListActivity.class);
             startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
             return true;
-        case R.id.discoverable:
-            // Ensure this device is discoverable by others
-            ensureDiscoverable();
-            return true;
-        case R.id.pattern:
-        	setContentView(R.layout.patterncreator);
-        	return true;
 
-        case R.id.scheme:
-        	 //setContentView(R.layout.schemecreator);
-        	setcolors();
-        	 Intent goschemeracergo = new Intent (this, SchemeDraw.class);        	
-           	startActivity(goschemeracergo);
-           	
-
-       return true;
-        case R.id.home:
-        	setContentView(R.layout.main);
-        	return true;
-        }
-        return false;
     }
+		return false;
     
     
 
+}
 }
 
  
