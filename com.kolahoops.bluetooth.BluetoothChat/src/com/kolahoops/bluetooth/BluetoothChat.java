@@ -218,6 +218,8 @@ public class BluetoothChat extends Activity {
             finish();
             return;
         }
+        Intent serverIntent = new Intent(this, DeviceListActivity.class);
+        startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
     }
    
 	//get the selected dropdown list value
