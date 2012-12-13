@@ -20,26 +20,83 @@
     <!-- DropDownArrays -->
     <string name="pattern">Pattern</string>
     <string-array name="patterns">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <!-- full color patterns -->
+ <item>Sparkle</item>
+ <item>RainbowChase</item>
+ <item>ColorDrift</item>
+ <item>RainbowDance</item>
+ <item>SineChase</item>
+ <item>SineDance</item>
+ <item>Rainbow Sine Chase</item>
+ <item>Long SineChase Mod</item>
+ <item>Color Drift SineChase</item>
+ <item>Wavy Flag</item>
+ <item>Simple Orbit</item>
+ <item>Sine Chase</item>
+ <item>Sine Compass</item>
+   <!-- Color scheme responsive patterns -->
+  <item>Scheme Test</item>
+  <item>Four Fade</item>
+  <item>Whacky</item>
+  <item>Accel Sparkle</item>
+  <item>One Fade</item>
+  <item>Scheme Sparkle</item>
+  <item>Test Fade</item>
+  <item>Test Long Fade</item>
+  <item>Scheme Chase</item>
+  <item>Who?</item>
+  <item>Rainbow Chase</item>
+  <item>RainDance</item>
+  <item>Compass Heading</item>
+  <item>Compass Heading Solid</item>
+  <item>Dice</item>
+  <item>Schemetest</item>
+  <item>Scheme Test long</item>
+  <item>Scheme Fade</item>
+  <item>This guy</item>
+  <item>PacMan</item>
+  <item>Strobe</item>
+  <item>Fans</item>
+  <item>Scroll</item>
     </string-array>
     <string-array name="scheme"> 
-        <item>Ocean</item>
-        <item>Sun</item>
-        <item>Clouds</item>
-        <item>Pastels</item>
-        <item>Electric</item>
-        <item>Red-Blue</item>
-        <item>Ultra-Violet</item>
-        <item>ColorShock</item>
-        <item>Rainbow</item>
-        <item>Pastel-Rainbow</item>
+   <item>User Created</item>
+  <item>Major</item>
+  <item>Natural minor</item>
+  <item>Harmonic minor</item>
+  <item>Dorian</item>
+  <item>Mixolydian</item>
+  <item>Red-Green &#188;</item>
+  <item>Green-Blue &#188;</item>
+  <item>Blue-Red &#188;</item>
+  <item>Red-Blue &#189;</item>
+   <item>Green-Red &#189;</item>
+  <item>Blue-Green &#189;</item>
+  <item>Solid Red</item>
+  <item>Solid Orange</item>
+  <item>Solid Yellow</item>
+  <item>Solid Green</item>
+  <item>Solid Teal</item>
+  <item>Solid Blue</item>
+  <item>Solid Indigo</item>
+  <item>Solid Violet</item>
+  <item>Red and Black</item>
+  <item>Orange and Black</item>
+  <item>Yellow and Black</item>
+  <item>Green and Black</item>
+  <item>Teal and Black</item>
+  <item>Blue and Black</item>
+  <item>Indigo and Black</item>
+  <item>Violet and Black</item>
+  <item>Red and White</item>
+  <item>Orange and White</item>
+  <item>Yellow and White</item>
+  <item>Green and White</item>
+  <item>Teal and White</item>
+  <item>Blue and White</item>
+  <item>Indigo and White</item>
+  <item>Violet and White</item>
+  <item>Rainbow</item>
         </string-array>
     <string name="pattern_button">Choose Pattern</string>
     <string name="scheme">Color Scheme</string>
