@@ -34,6 +34,7 @@
  <item>Simple Orbit</item>
  <item>Sine Chase</item>
  <item>Sine Compass</item>
+ <item>POV</item>
    <!-- Color scheme responsive patterns -->
   <item>Scheme Test</item>
   <item>Four Fade</item>
@@ -105,7 +106,7 @@
 
     <!--  BluetoothChat -->
     <string name="send">Send</string>
-    <string name="button00">Compass</string>
+    <string name="button00">Reset</string>
     <string name="button01">Accelerometer</string>
     <string name="button02">Demo Mode</string>
     <string name="button03">Ir Learn Mode</string>
