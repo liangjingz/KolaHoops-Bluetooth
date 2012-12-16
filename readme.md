@@ -6,6 +6,8 @@
 
 BRIGHT Open Source LED Hoops with 3 axis compass, acceleromoter and Bluetooth.
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/BnoRrJodivg" frameborder="0" allowfullscreen></iframe>
+
 #[Get the App](http://github.com/mmmaxwwwell/kolahoops-bluetooth/raw/master/kolahoops.apk)#
 ![qr code](http://github.com/mmmaxwwwell/kolahoops-bluetooth/raw/master/qr.jpg)
 
