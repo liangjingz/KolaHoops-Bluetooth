@@ -19,12 +19,15 @@ package com.kolahoops.bluetooth;
 
 
 
+import java.util.ArrayList;
+
 import yuku.ambilwarna.AmbilWarnaDialog;
 import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,6 +35,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -43,6 +47,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -67,6 +72,11 @@ public class BluetoothChat extends Activity {
     public static final int MESSAGE_DEVICE_NAME = 4;
     public static final int MESSAGE_TOAST = 5;
     public static final int UPDATE_COLORS = 6;
+    public String Message = "";
+    
+    protected static final int RESULT_SPEECH = 7;
+    
+ //   private ImageButton btnSpeak;
 
     // Key names received from the BluetoothChatService Handler
     public static final String DEVICE_NAME = "device_name";
@@ -448,7 +458,21 @@ public class BluetoothChat extends Activity {
         Button03 = (Button) findViewById(R.id.Button03);
         Button03.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-               sendMessage("I");
+                Intent intent = new Intent(
+                        RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+ 
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
+ 
+                try {
+                    startActivityForResult(intent, RESULT_SPEECH);
+                  //  txtText.setText("");
+                } catch (ActivityNotFoundException a) {
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Opps! Your device doesn't support Speech to Text",
+                            Toast.LENGTH_SHORT);
+                   t.show();
+                }
+            	// sendMessage("I");
             }
         });
  
@@ -669,7 +693,25 @@ public class BluetoothChat extends Activity {
                 Toast.makeText(this, R.string.bt_not_enabled_leaving, Toast.LENGTH_SHORT).show();
                 finish();
             }
+            break;
+            
+        case RESULT_SPEECH: {
+            if (resultCode == RESULT_OK) {
+ 
+         
+            	ArrayList<String> Message = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            	 Toast t2 = Toast.makeText(getApplicationContext(),
+            			 Message.get(0),
+                         Toast.LENGTH_SHORT);
+                 t2.show();
+            }
+            break;
         }
+        
+        
+        }
+        
+        
     }
 
     @Override
