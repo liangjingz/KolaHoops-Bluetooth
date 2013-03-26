@@ -704,6 +704,8 @@ public class BluetoothChat extends Activity {
             			 Message.get(0),
                          Toast.LENGTH_SHORT);
                  t2.show();
+                 
+                 sendcolorPOV();
             }
             break;
         }
@@ -736,6 +738,12 @@ public class BluetoothChat extends Activity {
     
 
 }
+
+void sendcolorPOV(){
+	sendMessage("o "+Message);
+//sendMessage("J "+color1+" "+color2+" "+color3+" "+color4+" "+color5+" "+color6+" "+color7+" "+color8);
+}
+
 }
 
  
