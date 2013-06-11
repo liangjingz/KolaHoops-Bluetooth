@@ -32,34 +32,31 @@
  <item>Color Drift SineChase</item>
  <item>Wavy Flag</item>
  <item>Simple Orbit</item>
- <item>Sine Chase</item>
  <item>Sine Compass</item>
  <item>POV</item>
    <!-- Color scheme responsive patterns -->
   <item>Scheme Test</item>
+  <item>Scheme Test Long</item>
   <item>Four Fade</item>
   <item>Two Color Spin</item>
   <item>Whacky</item>
   <item>Accel Sparkle</item>
   <item>One Fade</item>
   <item>Scheme Sparkle</item>
-  <item>Test Fade</item>
-  <item>Test Long Fade</item>
-  <item>Scheme Chase</item>
+  <item>Scheme Fade</item>
+  <item>Scheme Fade Long</item>
+  <item>Scheme Drift</item>
   <item>Who?</item>
-  <item>Rainbow Chase</item>
-  <item>RainDance</item>
   <item>Compass Heading</item>
   <item>Compass Heading Solid</item>
   <item>Dice</item>
-  <item>Schemetest</item>
-  <item>Scheme Test long</item>
   <item>Scheme Fade</item>
-  <item>This guy</item>
+  <item>This Guy</item>
   <item>PacMan</item>
   <item>Strobe</item>
   <item>Fans</item>
   <item>Scroll</item>
+  //POV
   <item>DancePOV</item>
 <item>SideSquarePOV</item>
 <item>BigBricksPOV</item>
@@ -382,7 +379,7 @@
     <string name="button00">Reset</string>
     <string name="button01">Accelerometer</string>
     <string name="button02">Demo Mode</string>
-    <string name="button03">Voice</string>
+    <string name="button03">Ir Learn Mode</string>
     <string name="button04"></string>
     <string name="button05">5</string>
     <string name="button06">6</string>
